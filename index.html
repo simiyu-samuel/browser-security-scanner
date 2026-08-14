@@ -2,61 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="SENTINEL privacy-first browser security auditor">
+  <meta name="theme-color" content="#030706">
   <title>SENTINEL // Browser Security Auditor</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<div class="scanlines"></div>
-<main class="shell">
-  <header class="topbar">
-    <div>
-      <div class="brand">SENTINEL<span>//</span>SECURITY</div>
-      <div class="muted">Privacy-first browser security auditor</div>
-    </div>
-    <div class="live"><i></i> LIVE SCANNER</div>
-  </header>
+  <div class="scanlines" aria-hidden="true"></div>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="SENTINEL home">SENTINEL<span>//</span>SECURITY</a>
+      <div class="status-chip" role="status" aria-live="polite">
+        <i aria-hidden="true"></i><span id="liveStatus">READY TO SCAN</span>
+      </div>
+    </header>
 
-  <section class="hero">
-    <div class="eyebrow">CLIENT-SIDE SECURITY AUDIT</div>
-    <h1>Inspect your browser.<br><span>Keep your data local.</span></h1>
-    <p>Runs permitted browser checks in your browser. No history, passwords, bookmarks, or files are read.</p>
-    <button id="startBtn">START SECURITY SCAN <b>↯</b></button>
-    <div class="consent">By scanning, you agree to run local browser capability checks. No account required.</div>
-  </section>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="eyebrow">CLIENT-SIDE SECURITY AUDIT</div>
+      <h1 id="hero-title">Inspect your browser.<br><span>Keep your data local.</span></h1>
+      <p>Run practical checks against this browser, device, and deployment. SENTINEL never asks for passwords, history, files, or permissions.</p>
+      <div class="hero-actions">
+        <button class="button button-primary" id="startBtn" type="button">START SECURITY SCAN <b aria-hidden="true">↯</b></button>
+        <button class="button button-ghost" id="learnMore" type="button">HOW IT WORKS</button>
+      </div>
+      <div class="consent"><span aria-hidden="true">▸</span> Local checks only · no account · no tracking</div>
+    </section>
 
-  <section class="dashboard hidden" id="dashboard">
-    <div class="score-card">
-      <div class="ring"><span id="score">--</span><small>/100</small></div>
-      <div><div class="eyebrow">SECURITY SCORE</div><h2 id="risk">WAITING</h2><p id="summary">Initializing...</p></div>
-    </div>
-    <div class="stats">
-      <div><span>CHECKS</span><strong id="total">0</strong></div>
-      <div><span>PASS</span><strong id="passed">0</strong></div>
-      <div><span>WARNINGS</span><strong id="warnings">0</strong></div>
-      <div><span>NOTES</span><strong id="notes">0</strong></div>
-    </div>
-  </section>
+    <section class="feature-strip" aria-label="Scanner capabilities">
+      <div><span class="feature-icon" aria-hidden="true">◎</span><strong>ORIGIN</strong><small>HTTPS + headers</small></div>
+      <div><span class="feature-icon" aria-hidden="true">◈</span><strong>CAPABILITIES</strong><small>Browser APIs</small></div>
+      <div><span class="feature-icon" aria-hidden="true">⌁</span><strong>PRIVACY</strong><small>No permission prompts</small></div>
+    </section>
 
-  <section class="grid hidden" id="resultsSection">
-    <div class="panel">
-      <div class="panel-head">SECURITY CHECKS <span id="progressText">0%</span></div>
-      <div id="results"></div>
-    </div>
-    <div class="panel terminal-panel">
-      <div class="panel-head">LIVE TERMINAL</div>
-      <div id="terminal" class="terminal"></div>
-    </div>
-  </section>
+    <section class="scan-area hidden" id="scanArea" aria-labelledby="scan-title">
+      <div class="scan-heading">
+        <div>
+          <div class="eyebrow">AUDIT RUN</div>
+          <h2 id="scan-title">Security posture</h2>
+        </div>
+        <div class="progress-wrap" aria-label="Scan progress">
+          <span id="progressText">0%</span>
+          <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+        </div>
+      </div>
 
-  <section class="panel hidden" id="details">
-    <div class="panel-head">ENVIRONMENT SNAPSHOT</div>
-    <div id="environment" class="env"></div>
-  </section>
+      <div class="dashboard">
+        <article class="score-card panel-surface">
+          <div class="score-ring" aria-label="Security score">
+            <span id="score">--</span><small>/100</small>
+          </div>
+          <div class="score-copy">
+            <div class="eyebrow">SECURITY SCORE</div>
+            <h3 id="risk">WAITING</h3>
+            <p id="summary">Preparing local checks...</p>
+          </div>
+        </article>
+        <div class="stats panel-surface" aria-label="Scan totals">
+          <div><span>CHECKS</span><strong id="total">0</strong></div>
+          <div><span>PASS</span><strong id="passed">0</strong></div>
+          <div><span>WARNINGS</span><strong id="warnings">0</strong></div>
+          <div><span>NOTES</span><strong id="notes">0</strong></div>
+        </div>
+      </div>
 
-  <footer>SENTINEL v1.0 // NO DATABASE // NO THIRD-PARTY TRACKING // RESULTS GENERATED LOCALLY</footer>
-</main>
-<script src="/js/scanner.js"></script>
+      <div class="grid">
+        <section class="panel-surface results-panel" aria-labelledby="results-title">
+          <div class="panel-head">
+            <span id="results-title">SECURITY CHECKS</span>
+            <span id="resultsCount">0 results</span>
+          </div>
+          <div class="filter-bar" role="group" aria-label="Filter security checks">
+            <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">ALL</button>
+            <button class="filter-button" type="button" data-filter="PASS" aria-pressed="false">PASS</button>
+            <button class="filter-button" type="button" data-filter="WARNING" aria-pressed="false">WARNINGS</button>
+            <button class="filter-button" type="button" data-filter="INFO" aria-pressed="false">NOTES</button>
+          </div>
+          <div id="results" aria-live="polite"></div>
+          <div id="emptyResults" class="empty-state hidden">No checks match this filter.</div>
+        </section>
+
+        <section class="panel-surface terminal-panel" aria-labelledby="terminal-title">
+          <div class="panel-head"><span id="terminal-title">LIVE TERMINAL</span><span class="terminal-dot" aria-hidden="true"></span></div>
+          <div id="terminal" class="terminal" role="log" aria-live="polite" aria-relevant="additions"></div>
+        </section>
+      </div>
+
+      <section class="panel-surface details-panel" aria-labelledby="details-title">
+        <div class="panel-head"><span id="details-title">ENVIRONMENT SNAPSHOT</span><span>NON-SENSITIVE</span></div>
+        <div id="environment" class="env"></div>
+      </section>
+
+      <section class="report-bar panel-surface" aria-label="Report actions">
+        <div><strong>Keep a copy of your audit</strong><span>Generated locally in your browser.</span></div>
+        <div class="report-actions">
+          <button class="button button-small button-ghost" id="copyBtn" type="button">COPY SUMMARY</button>
+          <button class="button button-small button-ghost" id="downloadBtn" type="button">DOWNLOAD JSON</button>
+          <button class="button button-small button-primary" id="rescanBtn" type="button">RUN AGAIN</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="how-it-works hidden" id="howItWorks" aria-labelledby="how-title">
+      <div class="panel-head"><span id="how-title">WHAT SENTINEL CAN CHECK</span><button id="closeHow" type="button" aria-label="Close explanation">×</button></div>
+      <div class="how-grid">
+        <p><b>1 / Observe</b> It reads browser capability signals already exposed to this page.</p>
+        <p><b>2 / Verify</b> It makes one same-origin request to confirm this deployment’s security response headers.</p>
+        <p><b>3 / Explain</b> It shows pass, warning, and informational results with practical context.</p>
+      </div>
+      <p class="boundary-note"><b>Privacy boundary:</b> a website cannot read your history, passwords, bookmarks, or arbitrary local files. SENTINEL does not try to bypass those protections.</p>
+    </section>
+
+    <footer>SENTINEL v2.0 // NO DATABASE // NO THIRD-PARTY TRACKING // RESULTS GENERATED LOCALLY</footer>
+  </main>
+  <noscript><div class="noscript">SENTINEL needs JavaScript to run local browser checks.</div></noscript>
+  <script src="/js/scanner.js"></script>
 </body>
 </html>

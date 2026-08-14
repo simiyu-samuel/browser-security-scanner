@@ -1,6 +1,6 @@
 # SENTINEL // Browser Security Auditor
 
-Privacy-first browser security audit with a hacker-style UI.
+Privacy-first, mobile-first browser security audit with a hacker-style UI.
 
 ## Stack
 - Static HTML/CSS/JavaScript
@@ -9,10 +9,24 @@ Privacy-first browser security audit with a hacker-style UI.
 - No analytics
 - No third-party runtime dependencies
 
+## What it does
+
+The scanner runs checks locally in the visitor's browser and verifies the same-origin `/api/security` endpoint and its response security headers. It reports:
+
+- HTTPS and secure-context state
+- Content Security Policy, frame, referrer, permissions, and content-type headers
+- Web Storage and Web Crypto availability
+- Permission states without requesting access
+- Service worker and cross-origin isolation surfaces
+- Do Not Track and network signals
+- Non-sensitive environment metadata
+
+Completed results can be filtered, copied as a summary, or downloaded as JSON. No result is sent to a database.
+
 ## Deploy to Vercel
-1. Create a GitHub repository and upload this folder.
+1. Create a GitHub repository and push this folder.
 2. Import the repository into Vercel.
-3. Deploy with the default settings.
+3. Deploy with the default settings; no build command is required.
 4. Open the deployed HTTPS URL and press **START SECURITY SCAN**.
 
 ## Deploy to GitHub Pages

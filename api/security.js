@@ -6,10 +6,11 @@ export default async function handler(req, res) {
 
   return res.status(200).json({
     scanner: "SENTINEL",
-    version: "1.0",
+    version: "2.0",
     database: false,
     thirdPartyTracking: false,
-    purpose: "serverless security metadata endpoint",
-    note: "This endpoint intentionally performs no target probing and stores no visitor data."
+    purpose: "same-origin deployment health and security-header verification",
+    note: "This endpoint intentionally performs no target probing and stores no visitor data.",
+    method: req.method
   });
 }
