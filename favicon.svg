@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">SENTINEL shield</title>
+  <desc id="desc">Green security shield with a cyan circuit core</desc>
+  <rect width="64" height="64" rx="14" fill="#030706"/>
+  <path d="M32 8 51 15v15c0 13-8 21-19 27C21 51 13 43 13 30V15l19-7Z" fill="#07150f" stroke="#00ff91" stroke-width="2.5"/>
+  <path d="M32 17v30M22 24h20M22 34h20M25 44h14" fill="none" stroke="#12352a" stroke-width="2"/>
+  <circle cx="32" cy="24" r="4" fill="#00eaff" stroke="#030706" stroke-width="2"/>
+  <circle cx="22" cy="24" r="2.5" fill="#00ff91"/>
+  <circle cx="42" cy="24" r="2.5" fill="#00ff91"/>
+  <circle cx="22" cy="34" r="2.5" fill="#00ff91"/>
+  <circle cx="42" cy="34" r="2.5" fill="#00ff91"/>
+  <path d="M27 44h-5M37 44h5" stroke="#00eaff" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

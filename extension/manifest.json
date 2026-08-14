@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "SENTINEL Local Browser Auditor",
+  "version": "0.1.0",
+  "description": "Local-only browser posture audit for managed company endpoints.",
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "history",
+    "bookmarks",
+    "cookies",
+    "tabs",
+    "sessions",
+    "downloads",
+    "management",
+    "privacy",
+    "contentSettings",
+    "storage",
+    "nativeMessaging",
+    "system.cpu",
+    "system.memory",
+    "system.storage"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "incognito": "split",
+  "action": {
+    "default_title": "SENTINEL Local Audit",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "options_page": "options.html",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

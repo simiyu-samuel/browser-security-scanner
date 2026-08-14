@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SENTINEL Local Audit</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <div class="brand">SENTINEL<span>//</span>LOCAL</div>
+        <p>Managed endpoint browser audit</p>
+      </div>
+      <span class="local-badge">LOCAL ONLY</span>
+    </header>
+
+    <section class="intro">
+      <div class="eyebrow">PRIVILEGED EXTENSION MODE</div>
+      <h1>Inspect the browser profile.</h1>
+      <p>Reads permitted browser metadata locally. It does not upload findings, read raw passwords, or modify browser data.</p>
+      <button id="scanButton" type="button">RUN LOCAL AUDIT</button>
+      <p id="state" class="state" role="status">Ready.</p>
+    </section>
+
+    <section id="summary" class="summary hidden" aria-live="polite">
+      <div class="score"><strong id="checkCount">0</strong><span>local metrics</span></div>
+      <div class="score"><strong id="networkCount">0</strong><span>network requests</span></div>
+      <div class="score"><strong id="destructiveCount">0</strong><span>destructive actions</span></div>
+    </section>
+
+    <section id="results" class="results hidden" aria-label="Audit results"></section>
+
+    <div class="actions">
+      <button id="exportButton" class="secondary" type="button" disabled>EXPORT JSON</button>
+      <button id="clearButton" class="secondary" type="button" disabled>CLEAR</button>
+    </div>
+
+    <footer>Data stays in this browser profile. Export is user initiated.</footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

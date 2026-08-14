@@ -1,0 +1,9 @@
+{
+  "name": "com.sentinel.local_auditor",
+  "description": "SENTINEL read-only local endpoint posture host",
+  "path": "/ABSOLUTE/PATH/TO/native-host/launcher",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://REPLACE_WITH_MANAGED_EXTENSION_ID/"
+  ]
+}

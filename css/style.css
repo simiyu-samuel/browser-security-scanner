@@ -105,6 +105,7 @@ button:focus-visible, a:focus-visible {
 .progress-bar { width: 0; height: 100%; background: var(--green); box-shadow: 0 0 12px var(--green); transition: width .25s ease; }
 
 .dashboard, .grid { display: grid; gap: 14px; }
+.dashboard > *, .grid > * { min-width: 0; }
 .dashboard { grid-template-columns: 1.45fr 1fr; margin-bottom: 14px; }
 .grid { grid-template-columns: 1.25fr .75fr; }
 .panel-surface { border: 1px solid var(--line); background: linear-gradient(145deg, var(--panel), #050b09); box-shadow: 0 12px 40px rgb(0 0 0 / 50%); }
@@ -125,12 +126,17 @@ button:focus-visible, a:focus-visible {
 .panel-head > span:last-child { color: var(--muted); font-size: 9px; }
 .panel-head button { border: 0; background: transparent; color: var(--muted); cursor: pointer; font-size: 22px; line-height: 1; }
 .panel-head button:hover { color: var(--red); }
-.filter-bar { display: flex; gap: 6px; overflow-x: auto; padding: 10px 15px 5px; scrollbar-width: thin; }
+.filter-bar { display: flex; gap: 6px; min-width: 0; max-width: 100%; overflow-x: auto; padding: 10px 15px 5px; scrollbar-width: thin; }
 .filter-button { min-height: 32px; border: 1px solid var(--line); background: transparent; color: var(--muted); padding: 5px 9px; cursor: pointer; font: 9px var(--font); letter-spacing: .5px; white-space: nowrap; }
 .filter-button:hover, .filter-button.active { border-color: var(--cyan); color: var(--cyan); }
+.filter-select-label { align-self: center; margin-left: auto; color: var(--muted); font-size: 9px; white-space: nowrap; }
+.filter-select { min-height: 32px; border: 1px solid var(--line); background: var(--bg-soft); color: var(--cyan); padding: 5px 8px; font: 9px var(--font); letter-spacing: .3px; }
+.filter-select:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 .check { display: flex; justify-content: space-between; gap: 17px; padding: 14px 15px; border-bottom: 1px solid var(--line-soft); }
 .check:last-child { border-bottom: 0; }
 .check h3 { margin: 0 0 3px; color: var(--text); font-size: 12px; }
+.check-meta { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.category { color: var(--cyan); font-size: 8px; letter-spacing: .7px; text-transform: uppercase; }
 .check p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.5; }
 .check-detail { margin-top: 5px !important; color: #a7c8ba !important; }
 .badge { align-self: flex-start; flex: 0 0 auto; border: 1px solid; padding: 4px 7px; font-size: 9px; white-space: nowrap; }

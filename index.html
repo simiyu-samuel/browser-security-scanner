@@ -6,6 +6,7 @@
   <meta name="description" content="SENTINEL privacy-first browser security auditor">
   <meta name="theme-color" content="#030706">
   <title>SENTINEL // Browser Security Auditor</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -77,6 +78,16 @@
             <button class="filter-button" type="button" data-filter="PASS" aria-pressed="false">PASS</button>
             <button class="filter-button" type="button" data-filter="WARNING" aria-pressed="false">WARNINGS</button>
             <button class="filter-button" type="button" data-filter="INFO" aria-pressed="false">NOTES</button>
+            <label class="filter-select-label" for="categoryFilter">AREA</label>
+            <select id="categoryFilter" class="filter-select" aria-label="Filter checks by area">
+              <option value="all">ALL AREAS</option>
+              <option value="Origin & transport">ORIGIN + TRANSPORT</option>
+              <option value="Headers & isolation">HEADERS + ISOLATION</option>
+              <option value="Storage & state">STORAGE + STATE</option>
+              <option value="Permissions & hardware">PERMISSIONS + HARDWARE</option>
+              <option value="Privacy signals">PRIVACY SIGNALS</option>
+              <option value="Protected surfaces">PROTECTED SURFACES</option>
+            </select>
           </div>
           <div id="results" aria-live="polite"></div>
           <div id="emptyResults" class="empty-state hidden">No checks match this filter.</div>
@@ -113,7 +124,7 @@
       <p class="boundary-note"><b>Privacy boundary:</b> a website cannot read your history, passwords, bookmarks, or arbitrary local files. SENTINEL does not try to bypass those protections.</p>
     </section>
 
-    <footer>SENTINEL v2.0 // NO DATABASE // NO THIRD-PARTY TRACKING // RESULTS GENERATED LOCALLY</footer>
+    <footer>SENTINEL v2.1 // NO DATABASE // NO THIRD-PARTY TRACKING // RESULTS GENERATED LOCALLY</footer>
   </main>
   <noscript><div class="noscript">SENTINEL needs JavaScript to run local browser checks.</div></noscript>
   <script src="/js/scanner.js"></script>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SENTINEL Local Audit Settings</title>
+  <style>
+    :root { color-scheme: dark; font-family: ui-monospace,SFMono-Regular,Consolas,monospace; background:#030706; color:#d7eee4; }
+    body { max-width:720px; margin:0 auto; padding:32px; line-height:1.6; }
+    h1 { color:#00ff91; }
+    h2 { color:#00eaff; font-size:1rem; }
+    .card { border:1px solid #12352a; background:#08130f; padding:18px; margin:16px 0; }
+    .good { color:#00ff91; }
+    .muted { color:#78988c; }
+  </style>
+</head>
+<body>
+  <h1>SENTINEL // LOCAL AUDITOR</h1>
+  <p class="good">Local-only mode is fixed for this build.</p>
+  <section class="card">
+    <h2>Data boundary</h2>
+    <p class="muted">Audit findings are collected and displayed on this endpoint. The extension does not call a remote API, persist raw URLs, store credentials, or modify browser data.</p>
+  </section>
+  <section class="card">
+    <h2>Native host</h2>
+    <p class="muted">If the managed endpoint installs the signed native host, SENTINEL can add OS posture metadata. The native host must be registered by your endpoint-management platform.</p>
+  </section>
+</body>
+</html>

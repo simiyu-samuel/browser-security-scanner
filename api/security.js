@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 
   return res.status(200).json({
     scanner: "SENTINEL",
-    version: "2.0",
+    version: "2.1",
     database: false,
     thirdPartyTracking: false,
     purpose: "same-origin deployment health and security-header verification",
