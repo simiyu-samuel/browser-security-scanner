@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="SENTINEL privacy-first browser security auditor">
+  <title>SENTINEL // Browser Security Auditor</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="scanlines"></div>
+<main class="shell">
+  <header class="topbar">
+    <div>
+      <div class="brand">SENTINEL<span>//</span>SECURITY</div>
+      <div class="muted">Privacy-first browser security auditor</div>
+    </div>
+    <div class="live"><i></i> LIVE SCANNER</div>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">CLIENT-SIDE SECURITY AUDIT</div>
+    <h1>Inspect your browser.<br><span>Keep your data local.</span></h1>
+    <p>Runs permitted browser checks in your browser. No history, passwords, bookmarks, or files are read.</p>
+    <button id="startBtn">START SECURITY SCAN <b>↯</b></button>
+    <div class="consent">By scanning, you agree to run local browser capability checks. No account required.</div>
+  </section>
+
+  <section class="dashboard hidden" id="dashboard">
+    <div class="score-card">
+      <div class="ring"><span id="score">--</span><small>/100</small></div>
+      <div><div class="eyebrow">SECURITY SCORE</div><h2 id="risk">WAITING</h2><p id="summary">Initializing...</p></div>
+    </div>
+    <div class="stats">
+      <div><span>CHECKS</span><strong id="total">0</strong></div>
+      <div><span>PASS</span><strong id="passed">0</strong></div>
+      <div><span>WARNINGS</span><strong id="warnings">0</strong></div>
+      <div><span>NOTES</span><strong id="notes">0</strong></div>
+    </div>
+  </section>
+
+  <section class="grid hidden" id="resultsSection">
+    <div class="panel">
+      <div class="panel-head">SECURITY CHECKS <span id="progressText">0%</span></div>
+      <div id="results"></div>
+    </div>
+    <div class="panel terminal-panel">
+      <div class="panel-head">LIVE TERMINAL</div>
+      <div id="terminal" class="terminal"></div>
+    </div>
+  </section>
+
+  <section class="panel hidden" id="details">
+    <div class="panel-head">ENVIRONMENT SNAPSHOT</div>
+    <div id="environment" class="env"></div>
+  </section>
+
+  <footer>SENTINEL v1.0 // NO DATABASE // NO THIRD-PARTY TRACKING // RESULTS GENERATED LOCALLY</footer>
+</main>
+<script src="/js/scanner.js"></script>
+</body>
+</html>
