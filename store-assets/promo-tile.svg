@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280">
+  <rect width="440" height="280" fill="#030706"/>
+  <circle cx="340" cy="50" r="150" fill="#0b251c" opacity=".55"/>
+  <path d="M96 34 154 55v49c0 39-24 64-58 83-34-19-58-44-58-83V55l58-21Z" fill="#07150f" stroke="#00ff91" stroke-width="4"/>
+  <path d="M96 65v88M67 85h58M67 115h58M75 143h42" fill="none" stroke="#12352a" stroke-width="4"/>
+  <circle cx="96" cy="85" r="8" fill="#00eaff"/>
+  <circle cx="67" cy="85" r="5" fill="#00ff91"/>
+  <circle cx="125" cy="85" r="5" fill="#00ff91"/>
+  <circle cx="67" cy="115" r="5" fill="#00ff91"/>
+  <circle cx="125" cy="115" r="5" fill="#00ff91"/>
+  <text x="190" y="94" fill="#00ff91" font-family="monospace" font-size="25" font-weight="700" letter-spacing="3">SENTINEL</text>
+  <text x="190" y="122" fill="#00eaff" font-family="monospace" font-size="12" letter-spacing="2">BROWSER SECURITY</text>
+  <path d="M190 145h190" stroke="#12352a"/>
+  <text x="190" y="173" fill="#d7eee4" font-family="monospace" font-size="14">CHECK YOUR BROWSER.</text>
+  <text x="190" y="196" fill="#78988c" font-family="monospace" font-size="12">KEEP RESULTS LOCAL.</text>
+  <circle cx="190" cy="235" r="4" fill="#00ff91"/>
+  <text x="203" y="240" fill="#78988c" font-family="monospace" font-size="10" letter-spacing="1">NO TRACKING · NO DATABASE</text>
+</svg>

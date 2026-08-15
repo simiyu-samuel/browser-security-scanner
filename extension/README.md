@@ -1,6 +1,6 @@
 # SENTINEL local extension
 
-This is the privileged local layer for the company browser audit. It targets Chromium-based Chrome/Edge on managed Windows, macOS, and Linux endpoints.
+This is the full-power local layer for the SENTINEL browser audit. It targets Chromium-based Chrome/Edge on Windows, macOS, and Linux endpoints.
 
 ## Local-only guarantees
 
@@ -11,9 +11,11 @@ This is the privileged local layer for the company browser audit. It targets Chr
 - No browser data is modified or deleted.
 - The native host is optional and read-only.
 
-## Permissions
+## Permissions and public release
 
-The manifest intentionally requests broad managed-endpoint permissions because this is an internal, force-installed audit extension. Keep the extension package signed and distribute it only through company device management. If the scope is narrowed later, move host access into `optional_host_permissions` and request it only for approved domains.
+The manifest intentionally requests broad permissions because the user-facing feature is a full local browser posture audit. Every permission is explained in `store-listing.md`, and the extension links to the hosted privacy policy. Start with **Unlisted** Chrome Web Store visibility and trusted testers; broad history/cookie/bookmark access may require additional review before a public listing.
+
+Keep the extension package signed. The native host must allow only the exact signed extension ID and must never use a wildcard origin.
 
 ## Load for development
 

@@ -19,9 +19,13 @@
     <section class="intro">
       <div class="eyebrow">PRIVILEGED EXTENSION MODE</div>
       <h1>Inspect the browser profile.</h1>
-      <p>Reads permitted browser metadata locally. It does not upload findings, read raw passwords, or modify browser data.</p>
+        <p>Reads permitted browser metadata locally. It does not upload findings, extract passwords, or modify browser data.</p>
       <button id="scanButton" type="button">RUN LOCAL AUDIT</button>
       <p id="state" class="state" role="status">Ready.</p>
+      <details class="permissions">
+        <summary>What this audit can access</summary>
+        <p>With your permission, SENTINEL can inspect browser history metrics, bookmark metrics, cookie security attributes, open-tab counts, downloads, installed extensions, privacy settings, and local device posture. Reports contain redacted metrics only.</p>
+      </details>
     </section>
 
     <section id="summary" class="summary hidden" aria-live="polite">

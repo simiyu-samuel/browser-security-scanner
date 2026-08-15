@@ -75,6 +75,36 @@ function clearReport() {
   state.textContent = "Ready.";
 }
 
+function renderPreview() {
+  document.body.classList.add("preview-mode");
+  latestReport = {
+    networkRequests: 0,
+    destructiveActions: 0,
+    browserData: {
+      history: { sampledEntries: 184, uniqueOrigins: 27, possiblyTruncated: false },
+      bookmarks: { folders: 12, links: 96, uniqueOrigins: 31 },
+      cookies: { total: 42, secure: 39, httpOnly: 28, partitioned: 8 },
+      tabs: { open: 9, incognito: 1 },
+      downloads: { sampled: 23, states: { complete: 21, interrupted: 2 } },
+      extensions: { installed: 8, enabled: 7, disabled: 1 },
+      recentlyClosed: { sessions: 3 }
+    },
+    privacySettings: {
+      thirdPartyCookies: { value: { value: false } },
+      passwordSaving: { value: { value: true } },
+      contentSettings: { javascript: { value: { setting: "allow" } } }
+    },
+    system: {
+      platform: { value: { os: "linux", arch: "x86-64" } },
+      nativeHost: { value: { supported: true, os: "Linux", browserProcesses: { chrome: 1 }, networkRequests: 0 } }
+    }
+  };
+  renderReport(latestReport);
+  state.textContent = "Preview complete. No network request was made.";
+}
+
 scanButton.addEventListener("click", runAudit);
 exportButton.addEventListener("click", exportReport);
 clearButton.addEventListener("click", clearReport);
+
+if (new URLSearchParams(window.location.search).has("preview")) renderPreview();

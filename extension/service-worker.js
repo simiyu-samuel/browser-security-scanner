@@ -192,7 +192,7 @@ async function runLocalAudit() {
 
   return {
     scanner: "SENTINEL LOCAL EXTENSION",
-    version: "0.1.0",
+    version: "1.0.0",
     generatedAt: new Date().toISOString(),
     localOnly: true,
     networkRequests: 0,

@@ -58,6 +58,12 @@ Open the project through a local web server or deploy it to Vercel. No build com
 
 For production, sign the extension and force-install it through the company’s Chrome/Edge device-management policy.
 
+### Chrome Web Store release
+
+The release package is built from `extension/` and contains the manifest, icons, popup, options page, and service worker. Store-facing drafts and source artwork live in `extension/store-listing.md` and `store-assets/`; generated upload assets are placed in `dist/store-assets/`.
+
+Because this full-power build handles sensitive browser metadata locally, the listing must accurately disclose its permissions and privacy practices. Begin with **Unlisted** visibility and trusted testers, then request **Public** review after the workflow and disclosures have been verified.
+
 ### Native host
 
 1. Use a stable signed extension ID.

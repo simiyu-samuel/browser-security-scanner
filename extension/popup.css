@@ -14,6 +14,9 @@ h1 { margin:8px 0 10px; font-size:24px; line-height:1.1; letter-spacing:-1px; }
 #scanButton { width:100%; min-height:44px; margin-top:17px; border:0; background:var(--green); color:#00140c; cursor:pointer; font:900 11px var(--font); }
 #scanButton:disabled { cursor:wait; opacity:.7; }
 .state { min-height:18px; margin-top:8px !important; color:var(--cyan) !important; }
+.permissions { margin-top:12px; border:1px solid var(--line); padding:8px 10px; color:var(--muted); font-size:10px; }
+.permissions summary { color:var(--cyan); cursor:pointer; font-size:10px; }
+.permissions p { margin:8px 0 0; font-size:10px; }
 .summary { display:grid; grid-template-columns:repeat(3,1fr); margin-bottom:14px; border:1px solid var(--line); background:var(--panel); }
 .score { display:flex; flex-direction:column; gap:2px; padding:12px 9px; border-right:1px solid var(--line); }
 .score:last-child { border-right:0; }
@@ -35,3 +38,21 @@ h1 { margin:8px 0 10px; font-size:24px; line-height:1.1; letter-spacing:-1px; }
 footer { padding-top:16px; color:#3d5d51; font-size:9px; text-align:center; }
 .hidden { display:none; }
 button:focus-visible { outline:2px solid var(--cyan); outline-offset:3px; }
+.preview-mode { width:640px; min-height:400px; }
+.preview-mode { overflow:hidden; }
+.preview-mode main { padding:17px 28px; }
+.preview-mode .intro { padding:16px 0 8px; }
+.preview-mode h1 { margin:5px 0 6px; font-size:22px; }
+.preview-mode .intro > p:first-of-type { font-size:10px; }
+.preview-mode .permissions, .preview-mode footer { display:none; }
+.preview-mode #scanButton { min-height:36px; margin-top:10px; }
+.preview-mode .state { min-height:14px; margin-top:5px !important; font-size:10px; }
+.preview-mode .summary { margin-bottom:8px; }
+.preview-mode .score { padding:8px 9px; }
+.preview-mode .score strong { font-size:18px; }
+.preview-mode .results { display:grid; grid-template-columns:1fr 1fr; max-height:112px; overflow:hidden; }
+.preview-mode .result { padding:5px 8px; }
+.preview-mode .result:nth-child(n+9) { display:none; }
+.preview-mode .result h2 { font-size:9px; }
+.preview-mode .actions { margin-top:8px; }
+.preview-mode .secondary { min-height:32px; }

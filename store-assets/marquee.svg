@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="560" viewBox="0 0 1400 560">
+  <rect width="1400" height="560" fill="#030706"/>
+  <circle cx="1160" cy="50" r="390" fill="#0b251c" opacity=".6"/>
+  <circle cx="1260" cy="510" r="240" fill="#07150f" opacity=".8"/>
+  <path d="M254 105 366 145v96c0 75-46 122-112 158-66-36-112-83-112-158v-96l112-40Z" fill="#07150f" stroke="#00ff91" stroke-width="7"/>
+  <path d="M254 165v170M198 204h112M198 263h112M214 319h80" fill="none" stroke="#12352a" stroke-width="7"/>
+  <circle cx="254" cy="204" r="16" fill="#00eaff"/>
+  <circle cx="198" cy="204" r="10" fill="#00ff91"/>
+  <circle cx="310" cy="204" r="10" fill="#00ff91"/>
+  <circle cx="198" cy="263" r="10" fill="#00ff91"/>
+  <circle cx="310" cy="263" r="10" fill="#00ff91"/>
+  <text x="490" y="193" fill="#00ff91" font-family="monospace" font-size="58" font-weight="700" letter-spacing="8">SENTINEL</text>
+  <text x="495" y="245" fill="#00eaff" font-family="monospace" font-size="22" letter-spacing="6">BROWSER SECURITY AUDITOR</text>
+  <path d="M495 285h560" stroke="#12352a" stroke-width="2"/>
+  <text x="495" y="345" fill="#d7eee4" font-family="monospace" font-size="29">Inspect the browser.</text>
+  <text x="495" y="389" fill="#00ff91" font-family="monospace" font-size="29">Keep your data local.</text>
+  <text x="495" y="455" fill="#78988c" font-family="monospace" font-size="16" letter-spacing="2">LOCAL-FIRST · NO TRACKING · NO DATABASE</text>
+</svg>
